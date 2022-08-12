@@ -20,11 +20,16 @@
   }
   .FL_LOGO{
     float: left;
-    --text-align: center;
     margin-right:20px; 
     width:100px;
     height:100px; 
-    --vertical-align:middle;
+  }
+  .MainTitle{
+    float:left; 
+    position: relative; 
+    left: 30px; 
+    top:10px;   
+    text-shadow: 0 0 8px #adadad;
   }
 
   .icons{
@@ -78,8 +83,19 @@
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
+    .leftcolumn, .rightcolumn{   
       width: 100%;
       padding: 0;
     }
+
+    .MainTitle, .FL_LOGO{  
+      float:none;
+      text-align: center;
+      position: relative; 
+      left:0px; 
+      top:0px;   
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      }
   }
