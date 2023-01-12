@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,6 +17,12 @@
     <div class="container mt-5">
         <h1> Contact The Developer</h1>
         <form class="row g-3" form action="https://formsubmit.co/7bb88f814baa6058786eab76958b5cc1" method="POST">
+        <!--Honey pot-->
+          <input type="text" name="_honey" style="display: none;">
+        <!-- Disable captcha -->
+
+        <input type="hidden" name="_captcha" value="false">
+
           <div class="col-md-6">
             <label for="Title" class="form-label">Title</label>
             <input type="text" class="form-control" name = "title" id="Title" required>
