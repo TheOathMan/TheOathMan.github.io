@@ -224,8 +224,8 @@ const APPS = {
 },
   earthpi: {
     name: "EarthPi",
-    tagline: "Stay hydrated with gentle reminders.",
-    pic:"pics/Earthpi.png",
+    tagline: "EarthPi",
+    pic:"pics/EarthPi.png",
     intro: "EarthPi is a an educational app designed to provide users with a detailed and interactive way to explore Earth through various map projections. The app allow users to study and visualize Earth from multiple perspectives.",
     features: [
       "Variety of Earth Projections: Choose from a variety of earth map projections.",
