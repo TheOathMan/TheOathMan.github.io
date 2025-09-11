@@ -1,0 +1,162 @@
+:root {
+--foreground1: #ffffff;
+--background1: #ffffff;
+/* --primary: #3498db; */
+}
+
+
+.app-content {
+  padding: 40px 20px;
+  color: #333;
+  line-height: 1.7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--foreground1);
+  /* width: 800px; */
+  /* align-self: center; */
+}
+
+/* .container {
+} */
+
+.section {
+  padding: 0 0;
+  background-color: var(--background1);
+}
+
+.body-container{
+  width: 100%;
+  max-width: 1000px;
+}
+
+.app-hero{
+  text-align: center;
+}
+
+.app-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.pic-guide-container{
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+   gap: 10px;
+}
+
+.guide-pic {
+    width: auto;        
+    /* max-width: 100%;*/
+    /* min-width: 300px;*/
+    height: 600px;
+    display: block;
+    margin: 0 0;
+    /* padding-right: 10px; */
+}
+
+.app-pic {
+    width: 100%;
+    /* max-width: 800px; */
+    /* min-width: 300px; */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.highlight {
+  color: var(--primary);
+  
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.app-content h2 {
+  color: var(--primary);
+  margin: 2rem 0 1rem;
+  font-size: 1.6rem;
+  /* padding: 0; */
+}
+
+.app-content p {
+  margin: 1rem 0;
+  color: #444;
+}
+
+ul.feature-list, ol.steps {
+  padding-left: 1.0rem;
+  margin: 1rem 0;
+}
+
+ul.feature-list li, ol.steps li {
+  margin: 0.7rem 0;
+}
+
+/* Buttons */
+.buttons {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  /* display: inline-block; */
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  transition: 0.2s;
+}
+
+.btn-android {
+  background: #4285F4;
+  color: white;
+}
+
+.btn-android:hover {
+  background: #3266bb;
+}
+
+.btn-ios {
+  background: #2b2b2b;
+  color: white;
+}
+
+.btn-ios:hover {
+  background: #000000;
+}
+
+.btn-web {
+  background: #31a189;
+  color: white;
+}
+
+.btn-web:hover {
+  background: #226f5e;
+}
+
+.small {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.connect {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.connect a {
+  color: #4a6fa5;
+  text-decoration: underline;
+}

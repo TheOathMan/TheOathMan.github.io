@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header{
+            background: linear-gradient(135deg, #6e8efb, #3498db);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <header>
+            <h1>App Feature Guide</h1>
+            <p class="subtitle">Click on the numbered hotspots to learn about each feature</p>
+        </header> -->
+        
+        <div class="instructions">
+            <p>Click on the numbered circles in the screenshot to learn about each feature</p>
+        </div>
+        
+        <div class="guide-container" id="GuideContainer">
+            <link rel="stylesheet" href="/guide/guide.css">
+            <link rel="stylesheet" href="/css/highlights.css">
+            <div class="image-section">
+                    <div class="screenshot-container">
+                        <img src="" alt="App screenshot" class="screenshot" id="screenshot">
+                    </div>
+
+                <div class="nav-section">
+                    <!-- <div class="nav-title">Dots Navigation</div> -->
+                    <div class="dots-nav" id="dots-container">
+                    </div>
+                </div>
+
+                <!-- <div class="Control-Guide"> -->
+                <!-- <h3>Notes:</h3> -->
+                <!-- <p id="highlight-text"> helllo there</p> -->
+                <!-- </div> -->
+
+            </div>
+            
+            <div class="explanations">
+                <h2>Feature Explanations</h2>
+            </div>
+
+
+        </div>
+        
+        <!-- <footer>
+            <p>© 2023 Your Company Name. All rights reserved.</p>
+        </footer> -->
+    </div>
+<script src="/guide/guide.js"></script>
+</body>
+</html>

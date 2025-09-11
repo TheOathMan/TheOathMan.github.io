@@ -1,0 +1,32 @@
+.Control-Guide {
+    background-color: #f1f8fe;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+    border-left: 4px solid #1a73e8;
+    /* text-align: left; */
+}
+.tips-list{
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px;
+}
+code {
+    background-color: #f6f8fa;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Consolas', monospace;
+}
+.step {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+.Notes {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e7f4e4;
+    border-radius: 6px;
+    border-left: 4px solid #34a853;
+}

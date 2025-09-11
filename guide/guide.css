@@ -1,0 +1,176 @@
+
+.guide-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.guide-container h2 {
+    color: #3498db;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.guide-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* padding: 20px; */
+}
+
+@media (min-width: 900px) {
+    .guide-container {
+        flex-direction: row;
+    }
+}
+
+.image-section {
+    flex: 1;
+    position: relative;
+    padding: 15px;
+}
+
+.screenshot-container {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hotspot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #ff5722;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    transition: all 0.3s ease;
+}
+
+.hotspot:hover {
+    transform: scale(1.1);
+    background: #ff8a65;
+}
+
+.explanations {
+    flex: 1;
+    padding: 20px;
+    background: #f9fafc;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+    .explanations {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
+.explanation {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.explanation.active {
+    border-left: 4px solid #6e8efb;
+    background: #f0f4ff;
+}
+
+.explanation h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #ff5722;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.instructions {
+    padding: 20px;
+    text-align: center;
+    background: #f0f4ff;
+    border-radius: 8px;
+    margin: 20px 20px;
+    color: #3498db;
+}
+
+
+/* Navigation Section */
+
+.nav-section {
+    /* background: #f8f9fa; */
+    /* border-radius: 10px; */
+    padding: 15px;
+    /* flex: 1; */
+    /* min-width: 250px; */
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); */
+    flex-basis: 100%;
+}
+
+/* .nav-title {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #3498db;
+    font-weight: 500;
+    font-size: 16px;
+} */
+
+/* Dots navigation */
+.dots-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #dfe6e9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot.active {
+    background: #3498db;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #74b9ff;
+}
