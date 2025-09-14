@@ -1,39 +1,64 @@
 
+// // Handle browser reload
+document.addEventListener('DOMContentLoaded', () => {
+  // loadPage(location.pathname);
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('app')){
+    const appId = urlParams.get('app');
+    loadPage("pages/template.html","app",appId,false);
+  }
+  if (urlParams.has('guide')){
+    // loadPage("pages/template.html",guideId,false);
+    process_tokens("guide");
+  }
+
+  if (urlParams.has('tos')){
+    // loadPage("pages/template.html",guideId,false);
+    // process_tokens("guide");
+    process_tos();
+  }
+  else{
+  }
+
+});
+
+
+
 document.querySelectorAll('nav .dropdown-menu a').forEach(link => {
   link.addEventListener('click', (e) => {
     // console.log(`Link clicked: ${link.getAttribute('href')}`);
     if(!link.hash) { // Check if it's not an anchor link (#)
       e.preventDefault();
-      const page = link.getAttribute('href');
-      loadPage("pages/template.html",page);
-    //   history.pushState({ page }, '', page);
+      const tag = link.getAttribute('href');
+      loadPage("pages/template.html","app",tag);
     }
   });
 });
 
-function loadPage(page,tag,pushhistory=true) {
+function loadPage(page,url_param,tag,pushhistory=true) {
   fetch(page)
     .then(response => response.text())
     .then(html => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       const section = doc.querySelector('.section');
-      section.id=tag
+      if (tag)
+        section.id=tag
       const sectionId = section ? section.id : null;
       document.querySelector('.section').innerHTML = section.innerHTML;
 
              // Add the section ID as a query parameter to the URL
       closeDropdowns();
       if (sectionId) {
-        const newUrl = `${location.pathname}?app=${sectionId}`;
-        if (pushhistory) 
+        const newUrl = `${location.pathname}?${url_param}=${sectionId}`;
+        if (pushhistory)
           history.pushState({ page }, '', newUrl);
-        process_tokens();
-      }
-      
+        process_tokens(url_param);
         
+      }
     });
 }
+
 
 
 // // Handle browser back/forward
@@ -41,7 +66,7 @@ window.addEventListener('popstate', () => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('app')){
       const appId = urlParams.get('app');
-      loadPage("pages/template.html",appId,false)
+      loadPage("pages/template.html","app",appId,false)
     }
     else if(!window.location.hash)
       window.location.href = 'index.html'
@@ -50,17 +75,6 @@ window.addEventListener('popstate', () => {
 });
 
 
-// // Handle browser reload
-document.addEventListener('DOMContentLoaded', () => {
-  // loadPage(location.pathname);
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('app')){
-    const appId = urlParams.get('app');
-    loadPage("pages/template.html",appId,false);
-    // console.log('im not supposed to be here');
-  }
-  console.log('Document loaded, loading initial page...'+urlParams);
-});
 
 
 document.querySelectorAll('nav ul li.dropdown').forEach(link => {
@@ -93,43 +107,57 @@ document.addEventListener('click', function(e) {
 //------------------- Process Tokens -------------------
 // Process tokens and load app data based on URL parameters
 
-function process_tokens() {
+function process_tokens(param) {
     const urlParams = new URLSearchParams(window.location.search);
-    const appId = urlParams.get('app');
-    console.log(`App ID from URL: ${appId}`);
-    // Fallback if no app is specified
-    if (!appId || !APPS[appId]) {
-    document.querySelector('.app-content').innerHTML = `
-        <div class="container">
-        <h2>App not found</h2>
-        <p>Try visiting <a href="?app=earthpi">?app=earthpi</a> or <a href="?app=moon">?app=moon</a>.</p>
-        </div>
-    `;
-    exit;
-    }
+    const appId = urlParams.get(param);
 
-    const app = APPS[appId];
-    console.log(`Loading app: ${app.name} (${appId})`);
-    // Fill in the content
-    document.getElementById('app-name').textContent = app.name;
-    document.getElementById('short-name').textContent = app.name;
-    document.getElementById('short-name-2').textContent = app.name;
-    document.getElementById('short-name-3').textContent = app.name;
-    document.getElementById('app-tagline').textContent = app.tagline;
-    document.getElementById('app-intro').textContent = app.intro;
-    document.getElementById('app-pic').src = app.pic;
-    if(app.onWeb == false) {
-      document.getElementById('web-link').style.display = 'none';
-    }
+    if (param ==='app')
+    {
+      console.log(`App ID from URL: ${appId}`);
+      // Fallback if no app is specified
+      if (!appId || !APPS[appId]) {
+      document.querySelector('.app-content').innerHTML = `
+          <div class="container">
+          <h2>App not found</h2>
+          <p>Try visiting <a href="?app=earthpi">?app=earthpi</a> or <a href="?app=moon">?app=moon</a>.</p>
+          </div>
+      `;
+      exit;
+      }
 
-    // Fill features
-    const featureList = document.getElementById('feature-list');
-    featureList.innerHTML = '';
-    app.features.forEach(feature => {
-      const li = document.createElement('li');
-      li.textContent = `${feature}`;
-      featureList.appendChild(li);
-    });
+      const app = APPS[appId];
+      console.log(`Loading app: ${app.name} (${appId})`);
+      // Fill in the content
+      document.getElementById('app-name').textContent = app.name;
+      document.getElementById('short-name').textContent = app.name;
+      document.getElementById('short-name-2').textContent = app.name;
+      document.getElementById('short-name-3').textContent = app.name;
+      document.getElementById('app-tagline').textContent = app.tagline;
+      document.getElementById('app-intro').textContent = app.intro;
+      document.getElementById('app-pic').src = app.pic;
+      if(app.onWeb == false) {
+        document.getElementById('web-link').style.display = 'none';
+      }
+
+      // Fill features
+      const featureList = document.getElementById('feature-list');
+      featureList.innerHTML = '';
+      app.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = `${feature}`;
+        featureList.appendChild(li);
+      });
+
+      
+      // Fill download links
+      document.getElementById('android-link').href = app.downloadAndroid;
+      document.getElementById('ios-link').href = app.downloadIOS;
+
+      // Version
+      document.getElementById('version-info').textContent = 
+      `Version ${app.version} • Updated ${app.updated}`;
+      document.getElementById('TOS-link').href = `?tos=${appId}`;
+  }
 
     // Fill steps
     // const stepsList = document.getElementById('steps-list');
@@ -141,19 +169,28 @@ function process_tokens() {
     // });
     // document.getElementById('guide-pic1').src = app.guidePics[0];
     
-    fetch(app.guide_html)
+    fetch("/guide/guide.html")
       .then(response => response.text())
       .then(html => {
         const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
+        const doc = parser.parseFromString(html,'text/html');
         const guide = doc.getElementById("GuideContainer");
-        const howToElement = document.getElementById("how-to");
+        const howToElement = document.getElementById((param === 'app')?"how-to":"section");
 
         if (guide && howToElement) {
           // Clear the existing content of "how-to" if needed
           // howToElement.innerHTML = '';
           // Append the entire GuideContainer element
-          howToElement.appendChild(guide);
+          if (param === 'app'){
+            howToElement.appendChild(guide);
+            document.getElementById("Link-to-guide").href=`/?guide=${appId}`;
+          }
+          if (param === 'guide'){
+            // howToElement.replaceChild(guide);
+            howToElement.innerHTML=''
+            howToElement.appendChild(guide);
+          }
+
           const script = document.createElement('script');
           script.src = '/guide/guide.js';
           script.onload = () => {
@@ -171,13 +208,38 @@ function process_tokens() {
 
 
 
-    // Fill download links
-    document.getElementById('android-link').href = app.downloadAndroid;
-    document.getElementById('ios-link').href = app.downloadIOS;
+}
 
-    // Version
-    document.getElementById('version-info').textContent = 
-    `Version ${app.version} • Updated ${app.updated}`;
+
+function process_tos(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const tosId = urlParams.get('tos');
+    var cur_tos_file;
+      if (tosId=='earthpi'){
+        cur_tos_file='EarthPi'
+      }
+      if (tosId=='moon'){
+        cur_tos_file='Tma'
+      }
+      if (tosId=='flatearth'){
+        cur_tos_file='fepp'
+      }
+
+      fetch(`/${cur_tos_file}/index.html`)
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html,'text/html');
+        const bd = doc.getElementsByClassName('card');
+        const toslogo = doc.getElementById('toslogo');
+        toslogo.style.display='block'
+        const section = document.getElementById("section");
+        if (section) {
+            section.innerHTML=''
+            section.appendChild(bd[0]);
+        }
+      });
+    history.pushState(window.location.pathname, '', `?tos=${tosId}`);
 }
 
 
@@ -215,7 +277,7 @@ const APPS = {
   //   "Set your daily goal",
   //   "Tap to log each glass"
   // ],
-  guide_html: "/guide/guide.html",
+  // guide_html: "/guide/guide.html",
   downloadAndroid: "https://play.google.com/store/apps/details?id=com.OProjects.FLS&hl=en",
   downloadIOS: "https://apps.apple.com/app/flat-earth-pro/id1664580677?uo=4",
   version: "2.2.1",
@@ -235,7 +297,7 @@ const APPS = {
       "Live Wallpaper: Set any projection as a live wallpaper on Android devices.",
       "Screenshot: Capture and save images of any projection for further use or sharing."
     ],
-    guide_html: "/guide/guide.html",
+    // guide_html: "/guide/guide.html",
     // guidePics:[
     //   "pics/guideEarthPi.png"
     // ],
@@ -275,7 +337,7 @@ const APPS = {
   //   "Set your daily goal",
   //   "Tap to log each glass"
   // ],
-  guide_html: "/guide/guide.html",
+  // guide_html: "/guide/guide.html",
   downloadAndroid: "https://play.google.com/store/apps/details?id=com.oproject.themoon&hl=en",
   downloadIOS: "https://apps.apple.com/app/the-moon-simulation/id6526486262?uo=4",
   version: "1.0.5",

@@ -62,6 +62,12 @@ header {
     bottom: 7px;
 }
 
+.logo-TOS {
+    float: right;
+    width: 100px;
+    height: auto;
+}
+
 .logo-text {
     /* font-size: 24px; */
     color: var(--primary);
@@ -75,6 +81,7 @@ nav ul {
 nav ul li {
     margin-left: 30px;
 }
+
 
 nav ul li a {
     color: white;
@@ -138,12 +145,12 @@ nav ul li .dropdown-menu li a:hover {
 
 /*---------------------Image Styles---------------------*/
 
-img {
+/* img {
     max-width: 100%; 
     height: auto;    
     display: block;  
     margin: 0 auto;  
-}
+} */
 
 /*---------------------Hero Section---------------------*/
 .hero {
@@ -413,6 +420,50 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     color: #bbb;
     font-size: 14px;
+}
+
+
+.card {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333; /* Dark gray for text */
+    background-color: #fff; /* White background for better contrast */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card ul li {
+    margin-left: 30px;
+}
+
+.card h2 {
+    font-size: 1.8em;
+    color: #222; 
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1; 
+    padding-bottom: 5px;
+}
+
+.card h5 {
+    font-size: 1em;
+    color: #555; /* Medium gray for subheadings */
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    text-align: justify; /* Justify text for a clean look */
+}
+
+.card a {
+    color: #007BFF; /* Blue for links */
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive */
