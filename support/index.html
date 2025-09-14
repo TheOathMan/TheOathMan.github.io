@@ -3,6 +3,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    <script>
+      // Redirect to email client on page load
+      window.onload = function() {
+        window.location.href = "mailto:oprojects07@gmail.com";
+        setTimeout(() => {
+          window.location.href = "/index.html"; // Update the path to your main index file
+        }, 1000);
+      };
+    </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +25,7 @@
   </head>
   <body>
 
-    <div class="container mt-5">
+    <div class="container mt-5" style="display: none;">
         <h1> Contact The Developer</h1>
         <form class="row g-3" form action="https://formsubmit.co/7bb88f814baa6058786eab76958b5cc1" method="POST">
         <!--Honey pot-->
