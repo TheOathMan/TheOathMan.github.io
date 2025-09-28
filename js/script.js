@@ -242,13 +242,16 @@ function process_tos(){
     history.pushState(window.location.pathname, '', `?tos=${tosId}`);
 }
 
+function myemail(){
+  window.location.href = "mailto:oprojects07@gmail.com";
+}
 
 //------------------- Apps Data -------------------
 
 const APPS = {
   flatearth: {
   name: "Flat Earth",
-  tagline: "Flat Earth App.",
+  tagline: "Flat Earth App",
   pic:"pics/Flat Earth.png",
   intro: "Flat Earth is an application that display Sun, moon ,earth and other celestial bodies real time at any date and time on a simple geocentric presentation.",
   features: [
@@ -267,26 +270,18 @@ const APPS = {
     "Take and share high-resolution screenshots.", 
     "Set custom notifications for specific celestial events.", 
     "Run the app as a live wallpaper."],
-    // instructin:["hello there"," do this"],
-  // guidePics:[
-  //   "pics/guideFE1.png"
-  // ],
-  // steps: [
-  //   "Download and install",
-  //   "Open the app",
-  //   "Set your daily goal",
-  //   "Tap to log each glass"
-  // ],
-  // guide_html: "/guide/guide.html",
   downloadAndroid: "https://play.google.com/store/apps/details?id=com.OProjects.FLS&hl=en",
   downloadIOS: "https://apps.apple.com/app/flat-earth-pro/id1664580677?uo=4",
   version: "2.2.1",
   updated: "July 2025",
   onWeb:false
 },
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
   earthpi: {
     name: "EarthPi",
-    tagline: "EarthPi",
+    tagline: "Earth Projections",
     pic:"pics/EarthPi.png",
     intro: "EarthPi is a an educational app designed to provide users with a detailed and interactive way to explore Earth through various map projections. The app allow users to study and visualize Earth from multiple perspectives.",
     features: [
@@ -297,51 +292,37 @@ const APPS = {
       "Live Wallpaper: Set any projection as a live wallpaper on Android devices.",
       "Screenshot: Capture and save images of any projection for further use or sharing."
     ],
-    // guide_html: "/guide/guide.html",
-    // guidePics:[
-    //   "pics/guideEarthPi.png"
-    // ],
-    // steps: [
-    //   "This is the time Widget to show the current app time. Changing time from the time controller panel will update this time widget. Press the Widget to open date/time picker. Also once time has changed, a rest button will appear next to the Widget to reset time back to current time.",
-    //   "These are the side toggle buttons to change projection's visual settings. The sun button toggles sunlight on/off. The grid button toggles latitude/longitude grid on/off. The circles button toggles tissot's indicatrix on/off. The location button toggles location marker on/off.",
-    //   "The sun position on the map (or any other celestial body) indicates their real time zenith (overhead) position over earth relative to the selected time.",
-    //   "These are the main menu bottoms. From left to right: the tools looking button is for additional features, time button is for showing time control panel, the projection button is for showing projections picker panel, then the projection preset button to change/customize projection settings, and finally the settings button for app settings.",
-    // ],
     downloadAndroid: "https://play.google.com/store/apps/details?id=com.oproject.earthpi&hl=en",
     downloadIOS: "https://apps.apple.com/app/earthpi/id6741358020?uo=4",
-    version: "1.0.4",
-    updated: "Aug 2025",
-    onWeb:true
+    version: "1.0.7",
+    updated: "September 2025",
+    onWeb:false
   },
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
+    //------------------------------------------------------------------------
   moon: {
   name: "The Moon",
-  tagline: "watch the moon.",
+  tagline: "Watch the Moon",
   pic:"pics/The Moon.png",
-  intro: "The Moon App displays accurate, real-time data and visualizations of the Moon's phases, position, and orbital details.",
+  intro: "The Moon App displays accurate, real-time data and visualizations of the Moon's phases, position, and orbital details Realtime at any time and date.",
   features: [
-    "Render the Moon's current phase, libration, and orbit (apogee/perigee) in real-time.",
+    "Render the Moon's current phase, liberation, and orbit (apogee/perigee) in real-time.",
     "Control time with a slider to animate the Moon's motion or jump to a specific date and time.",
     "View a highly realistic and accurate depiction of the Moon's behavior with an intuitive interface.",
     "Display a calendar of moon phases (full, new, quarter) for any year with precise times.",
     "Jump to any lunar event (phases, max declination, apogee, perigee) from the calendar.",
-    "Set the current Moon phase as a live wallpaper on Android, with minimal battery usage.",
     "View the Moon's current subpoint (overhead position) on an interactive Earth map.",
-    "Select a location on the map to see the Moon's parallactic angle from that specific viewpoint."
+    "Select a location on the map to see the Moon's parallactic angle from that specific viewpoint.",
+    "Set the The Moon as a live wallpaper on Android, with minimal battery usage.",
+    "Take and share high-resolution screenshots of the Moon at any phase or time.",
+    "Function in all time zones without an internet connection.",
+    "Access detailed lunar data including distance, angular size, altitude, azimuth, and more."
 ],
-  // guidePics:[
-  //   "pics/guideTheMoon.png"
-  // ],
-  // steps: [
-  //   "Download and install",
-  //   "Open the app",
-  //   "Set your daily goal",
-  //   "Tap to log each glass"
-  // ],
-  // guide_html: "/guide/guide.html",
   downloadAndroid: "https://play.google.com/store/apps/details?id=com.oproject.themoon&hl=en",
   downloadIOS: "https://apps.apple.com/app/the-moon-simulation/id6526486262?uo=4",
-  version: "1.0.5",
-  updated: "July 2025",
+  version: "1.1.2",
+  updated: "September 2025",
   onWeb:false
 }
 };
