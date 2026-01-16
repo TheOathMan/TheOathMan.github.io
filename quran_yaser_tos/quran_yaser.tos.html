@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - تطبيق القرآن</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        /* Language switcher */
+        .lang-switcher {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .lang-btn {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        
+        .lang-btn.active {
+            background: #2c5f2d;
+            color: white;
+            border-color: #2c5f2d;
+        }
+        
+        /* Language sections */
+        .lang-section {
+            display: none;
+        }
+        
+        .lang-section.active {
+            display: block;
+        }
+        
+        /* Arabic styling */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* English styling */
+        .ltr {
+            direction: ltr;
+            text-align: left;
+        }
+        
+        /* Content styling */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            font-size: 18px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        ul {
+            margin: 15px 0;
+        }
+        
+        .rtl ul {
+            padding-right: 20px;
+            padding-left: 0;
+        }
+        
+        .ltr ul {
+            padding-left: 20px;
+            padding-right: 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        strong {
+            color: #333;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <!-- <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ar">العربية</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div> -->
+    
+    <!-- Arabic Section (Default) -->
+    <section class="lang-section rtl active" id="ar-section">
+        <h1>سياسة الخصوصية</h1>
+        <p class="last-updated">آخر تحديث: يناير 2026</p>
+        
+        <p>يوضح سياسة الخصوصية هذه كيفية تعامل تطبيق القران اليسير مع معلوماتك. تم تصميم تطبيقنا ليكون <span class="highlight">مجانياً تماماً، ولا يحتوي على إعلانات، ولا يتطلب أي عمليات شراء داخل التطبيق.</span></p>
+
+        <h2>1. الوظائف الأساسية والعمل بدون إنترنت</h2>
+        <p>الغرض الأساسي من التطبيق هو قراءة القرآن الكريم. تعمل هذه الميزة الأساسية بالكامل دون الحاجة إلى اتصال بالإنترنت.</p>
+
+        <h2>2. جمع البيانات واستخدامها</h2>
+        <p>نحن لا نجمع أو نخزن أي بيانات تعريف شخصية. ومع ذلك، قد يطلب التطبيق الوصول إلى ما يلي:</p>
+        <ul>
+            <li><strong>بيانات الموقع:</strong> تُستخدم بدقة لحساب أوقات الصلاة بدقة. هذا الخيار اختياري ولا يعمل إلا إذا اخترت استخدام ميزة أوقات الصلاة.</li>
+            <li><strong>التخزين:</strong> يستخدم التطبيق مساحة تخزين تبلغ حوالي 10 ميجابايت للعلامات المرجعية والإعدادات المحفوظة (مثل الوضع الليلي وتفضيلات التمرير التلقائي).</li>
+        </ul>
+
+        <h2>3. خدمات الطرف الثالث (API)</h2>
+        <p>لتوفير أسماء المدن والمناطق الزمنية لأوقات الصلاة، قد يتصل التطبيق بالخدمات التالية (يتم استخدام خدمتين فقط في نفس الوقت):</p>
+        <ul>
+            <li>TimezoneDB / Google Maps Timezone API / GeoNames (للمناطق الزمنية)</li>
+            <li>OpenStreetMap Nominatim / Open-Meteo (لأسماء المدن)</li>
+        </ul>
+        <p>لا يتم مشاركة أي بيانات مع هذه الخدمات لأغراض التسويق أو التتبع.</p>
+
+        <h2>4. لا يوجد تتبع من طرف ثالث</h2>
+        <p>نحن لا نستخدم أي أدوات تحليلية أو برامج تتبع لمراقبة سلوكك أو إرسال بيانات إلى المطورين.</p>
+        
+        <h2>5. تحديثات السياسة</h2>
+        <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنخبرك بأي تغييرات من خلال نشر سياسة الخصوصية الجديدة على هذه الصفحة.</p>
+    </section>
+    
+    <!-- English Section -->
+    <section class="lang-section ltr" id="en-section">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: January 2026</p>
+        
+        <p>This Privacy Policy describes how our Quran Yaser handles your information. Our App is designed to be <span class="highlight">completely free, contains no ads, and requires no in-app purchases.</span></p>
+
+        <h2>1. Core Functionality & Offline Access</h2>
+        <p>The primary purpose of the App is Quran reading. This core feature functions entirely offline and does not require an internet connection.</p>
+
+        <h2>2. Data Collection & Usage</h2>
+        <p>We do not collect or store any personal identification data. However, the App may request access to the following:</p>
+        <ul>
+            <li><strong>Location Data:</strong> Used strictly to calculate accurate prayer times. This is optional and only active if you choose to use the prayer times feature.</li>
+            <li><strong>Storage:</strong> The app uses approximately 10MB of storage for saved bookmarks and settings (e.g., dark mode, auto-scroll preferences).</li>
+        </ul>
+
+        <h2>3. Third-Party API Services</h2>
+        <p>To provide city names and timezones for prayer times, the App may connect to the following services (only two are active at a time):</p>
+        <ul>
+            <li>TimezoneDB / Google Maps Timezone API / GeoNames (for Timezones)</li>
+            <li>OpenStreetMap Nominatim / Open-Meteo (for City Names)</li>
+        </ul>
+        <p>No data is shared with these services for marketing or tracking purposes. They are used solely for functional geocoding.</p>
+
+        <h2>4. No Third-Party Tracking</h2>
+        <p>We do not use any analytics tools, metrics trackers, or third-party SDKs that monitor your behavior or send data to developers.</p>
+        
+        <h2>5. Policy Updates</h2>
+        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+    </section>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p dir="ltr">© 2026 oproject</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const langSections = document.querySelectorAll('.lang-section');
+            
+            function switchLanguage(lang) {
+                // Update active button
+                langButtons.forEach(btn => {
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Show selected language section
+                langSections.forEach(section => {
+                    if (section.id === `${lang}-section`) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+                
+                // Update HTML direction and language
+                document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+                document.documentElement.setAttribute('lang', lang);
+                
+                // Update page title
+                document.title = lang === 'ar' ? 'سياسة الخصوصية - تطبيق القرآن' : 'Privacy Policy - Quran App';
+            }
+            
+            // Add click events to language buttons
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedLang = this.getAttribute('data-lang');
+                    switchLanguage(selectedLang);
+                });
+            });
+            
+            // Set Arabic as default
+            switchLanguage('ar');
+        });
+    </script>
+</body>
+</html>
