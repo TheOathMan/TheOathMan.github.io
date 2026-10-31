@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "title": "testing 123",
+  "body": "[b]New stuff[/b]\n• Dark mode\n• Bug fixes",
+  "images": ["pic1.png", "pic2.png"],
+  "latest_version": "1.3.0",
+  "download_url": "https://www.oproject.xyz/download"
+}
