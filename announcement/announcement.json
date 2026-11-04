@@ -3,5 +3,6 @@
   "height": "70",
   "images": ["p1.webp", "p2.webp", "p3.webp", "p4.webp", "p6.webp", "p7.webp", "p9.webp"],
   "latest_version": "3.0.0",
+  "languages": ["en"],
   "download_url": "https://www.oproject.xyz/download"
 }
