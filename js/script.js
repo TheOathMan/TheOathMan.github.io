@@ -224,6 +224,9 @@ function process_tos(){
       if (tosId=='flatearth'){
         cur_tos_file='fepp'
       }
+      if (tosId=='flatearth_3.0'){
+        cur_tos_file='fep3.0'
+      }
 
       fetch(`/${cur_tos_file}/index.html`)
       .then(response => response.text())
